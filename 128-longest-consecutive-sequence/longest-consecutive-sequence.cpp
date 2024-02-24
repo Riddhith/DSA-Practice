@@ -1,7 +1,7 @@
 class Solution {
 public:
     int longestConsecutive(vector<int>& nums) {
-        /*
+        
         if(nums.size()==0)
         return 0;
         sort(nums.begin(),nums.end());
@@ -24,7 +24,8 @@ public:
             right++;
             maxc=max(maxc,c);
         }
-        */
+        
+        /*
         int n=nums.size();
         if(n==0) return 0;
         set<int> s;
@@ -43,6 +44,7 @@ public:
                 maxc=max(maxc,c);
             }
         }
+        */
         return maxc;
     }
 };
