@@ -36,9 +36,11 @@ int lastOcc(vector<int>& arr, int n, int k){
 }
     vector<int> searchRange(vector<int>& nums, int target) {
         int n=nums.size();
-        vector<int> v;
-        v.push_back(firstOcc(nums,n,target));
-        v.push_back(lastOcc(nums,n,target));
-        return v;
+        // vector<int> v;
+        int f=firstOcc(nums,n,target);
+        if(f==-1) return {-1,-1};
+        int l=lastOcc(nums,n,target);
+        return {f,l};
+        // return v;
     }
 };
