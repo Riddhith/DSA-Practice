@@ -15,17 +15,17 @@ public:
         long long reqTime=0;
         long long low=1;
         long long high=maxi;
-        long long ans=-1;
+        // long long ans=-1;
         while(low<=high){
             long mid=low+(high-low)/2;
             reqTime=func(piles,mid);
             if(reqTime<=h){
-                ans=mid;
+                // ans=mid;
                 high=mid-1;
             }else{
                 low=mid+1;
             }
         }
-        return ans;
+        return low;
     }
 };
