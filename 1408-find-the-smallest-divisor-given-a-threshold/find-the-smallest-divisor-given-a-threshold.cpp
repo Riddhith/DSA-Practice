@@ -5,10 +5,7 @@ public:
 	for(int i=0;i<nums.size();i++){
 		sum+=ceil((double)nums[i]/(double)smallposs);
 	}
-	if(sum<=limit)
-	return true;
-	else
-	return false;
+	return sum<=limit;
 }
     int smallestDivisor(vector<int>& nums, int threshold) {
         int maxi = INT_MIN;
