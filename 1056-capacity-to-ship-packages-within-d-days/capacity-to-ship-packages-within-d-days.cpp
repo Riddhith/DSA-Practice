@@ -13,10 +13,7 @@ public:
                 c++;
             }
         }
-        if (c <= d)
-            return true;
-        else
-            return false;
+        return c<=d;
     }
     int shipWithinDays(vector<int>& weights, int days) {
         int sum = 0;
