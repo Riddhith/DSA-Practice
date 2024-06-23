@@ -1,17 +1,18 @@
 class Solution {
 public:
-    double minimumAverage(vector<int>& nums) {
+    double minimumAverage(vector<int>& nums) {        
+        set<double> s;
+        
         sort(nums.begin(),nums.end());
-        vector<int> sum;
-        int n=nums.size();
-        for(int i=0;i<n/2;i++){
-            sum.push_back(nums[i]+nums[n-i-1]);
+        
+        int i=0,j=nums.size()-1;
+        while(i<j)
+        {
+            s.insert( ( nums[i] + nums[j] ) / 2.0 );
+            i++,j--;
         }
-        int mini=INT_MAX;
-        for(int i=0;i<sum.size();i++){
-            mini=min(mini,sum[i]);
-        }
-        double m=(double)mini/2;
-        return m;
+        set<double>::iterator it=s.begin();
+
+        return *it ;
     }
 };
