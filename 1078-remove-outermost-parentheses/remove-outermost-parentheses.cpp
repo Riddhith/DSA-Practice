@@ -1,16 +1,16 @@
 class Solution {
 public:
     string removeOuterParentheses(string s) {
-        vector<string> v;
         int p=0;
+        vector<string> v;
         string st="";
         for(int i=0;i<s.length();i++){
-            if(s[i]=='(')
-            p++;
-            else if(s[i]==')')
-            p--;
+            if(s[i]=='('){
+                p++;
+            }else if(s[i]==')'){
+                p--;
+            }
             st+=s[i];
-
             if(p==0){
                 v.push_back(st);
                 st="";
@@ -19,7 +19,7 @@ public:
         for(int i=0;i<v.size();i++){
             string sr="";
             for(int j=1;j<v[i].length()-1;j++){
-                sr=sr+v[i][j];
+                sr+=v[i][j];
             }
             v[i]=sr;
         }
