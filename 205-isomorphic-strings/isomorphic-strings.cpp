@@ -9,8 +9,9 @@ public:
                 if(find(v.begin(),v.end(),t[i])==v.end()){
                     mp[s[i]]=t[i];
                     v.push_back(t[i]);
+                }else{
+                    return false;
                 }
-                else return false;
             }
             else if(mp[s[i]]!=t[i]){
                 return false;
