@@ -1,6 +1,31 @@
 class Solution {
 public:
     int myAtoi(string s) {
+        int i=0,sign=1;
+        if(i==s.length()){
+            return 0;
+        }
+        while(i<s.length() && s[i]==' '){
+            i++;
+        }
+        if(s[i]=='-'){
+            sign=-1;
+            i++;
+        }else if(s[i]=='+'){
+            i++;
+        }
+        long long res=0;
+        while(i<s.length() && isdigit(s[i])){
+            res=res*10+(s[i]-'0');
+            if((res*sign)>=INT_MAX){
+                return INT_MAX;
+            }else if((res*sign)<=INT_MIN){
+                return INT_MIN;
+            }
+            i++;
+        }
+        return res*sign;
+        /*
         int l=s.size(),sign=0,c=0;
         long num=0;
         string revs="",revss="";
@@ -30,14 +55,15 @@ public:
                 continue;
             }else if(revss[i]>='0' && revss[i]<='9'){
                 num=num*10+(revss[i]-'0');
-                if((num*sign)>INT_MAX){
+                if((num*sign)>=INT_MAX){
                     return INT_MAX;
-                }else if((num*sign)<INT_MIN){
+                }else if((num*sign)<=INT_MIN){
                     return INT_MIN;
                 }
                 c++;
             }else break;
         }
         return num*sign;
+        */
     }
 };
