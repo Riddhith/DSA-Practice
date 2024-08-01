@@ -24,7 +24,9 @@ public:
         temp=head;
         while(temp){
             if(n+1==(c-i)){
+                ListNode* delNode=temp->next;
                 temp->next=temp->next->next;
+                delete delNode;
                 break;
             }
             i++;
