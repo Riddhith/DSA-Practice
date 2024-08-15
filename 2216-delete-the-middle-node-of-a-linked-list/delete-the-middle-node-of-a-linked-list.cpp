@@ -12,7 +12,7 @@ class Solution {
 public:
     ListNode* deleteMiddle(ListNode* head) {
         if(head==NULL || head->next==NULL) return NULL;
-        ListNode* temp=head;
+        /*ListNode* temp=head;
         int l=0;
         while(temp){
             l++;
@@ -33,8 +33,8 @@ public:
             
             temp=temp->next;
         }
-        return head;
-        /*ListNode* prev=NULL;
+        return head;*/
+        ListNode* prev=NULL;
         ListNode* slow=head;
         ListNode* fast=head;
         while(fast!=NULL && fast->next!= NULL){
@@ -45,6 +45,6 @@ public:
         prev->next=slow->next;
         slow->next=NULL;
         delete(slow);
-        return head;*/
+        return head;
     }
 };
