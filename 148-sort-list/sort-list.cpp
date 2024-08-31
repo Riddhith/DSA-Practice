@@ -12,13 +12,15 @@ class Solution {
 public:
     ListNode* middleNode(ListNode* head) {
         ListNode* slow = head;
-        ListNode* fast = head->next;
+        ListNode* fast = head;
+        ListNode* prev=head;
         while (fast->next != NULL && fast->next->next != NULL) {
+            prev=slow;
             slow = slow->next;
             fast = fast->next->next;
         }
-        if (fast->next != NULL)
-            return slow->next;
+        // if (fast->next != NULL) return slow->next;
+        if(fast==NULL) return prev;
         return slow;
     }
     ListNode* sortTwoLists(ListNode* first, ListNode* second) {
