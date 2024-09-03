@@ -10,58 +10,48 @@
  */
 class Solution {
 public:
-    ListNode* reverseList(ListNode* head) {
-        // recursive
-        if (head == NULL || head->next == NULL)
-            return head;
-        ListNode* newHead = reverseList(head->next);
-        ListNode* front = head->next;
-        front->next = head;
-        head->next = NULL;
+    ListNode* reverseKsteps(ListNode* node, int k) {
+        // reverse the LL starting from node till k steps
+        if (k == 1)
+            return node;
+
+        ListNode* prev = NULL;
+        ListNode* curr = node;
+        ListNode* next = node->next;
+
+        ListNode* newHead;
+
+        while (k--) {
+            curr->next = prev;
+            prev = curr;
+            curr = next;
+            if (next)
+                next = next->next;
+        }
+
+        newHead = prev;
         return newHead;
     }
-    ListNode* reverseKGroup(ListNode* head, int k) {
-        if (head == NULL || head->next == NULL)
-            return head;
-        ListNode* temp = head;
-        int c = 0;
-        while (temp) {
-            c++;
+
+    ListNode* solve(ListNode* node, int k) {
+        if (node == NULL)
+            return node;
+        int x = k;
+        ListNode* temp = node;
+        while (x--) {
+            if (temp == NULL)
+                return node;
             temp = temp->next;
         }
-        if (c < k)
-            return head;
-        temp = head;
-        vector<pair<ListNode*, int>> v;
-        int r = 1;
-        v.push_back({head, r});
-        int i = 1;
-        while (temp) {
-            if (i == k) {
-                ListNode* t = temp->next;
-                if(t) v.push_back({t, ++r});
-                temp->next = NULL;
-                temp = t;
-                i = 1;
-            } else {
-                i++;
-                ++r;
-                temp = temp->next;
-            }
-        }
-        // cout<<v[0].first->val<<endl;
-        int j = 0;
-        ListNode* dummyhead = new ListNode(-1);
-        ListNode* move = dummyhead;
-        while (j < v.size()) {
-            if((c-v[j].second+1)>=k) v[j].first = reverseList(v[j].first);
-            move->next = v[j].first;
-            move = move->next;
-            while (move->next != NULL) {
-                move = move->next;
-            }
-            j++;
-        }
-        return dummyhead->next;
+
+        ListNode* headToBeJoined = solve(temp, k);
+        ListNode* parentTail = node;
+        ListNode* parentHead = reverseKsteps(node, k);
+
+        parentTail->next = headToBeJoined;
+        return parentHead;
+    }
+    ListNode* reverseKGroup(ListNode* head, int k) {
+        return solve(head,k);
     }
 };
