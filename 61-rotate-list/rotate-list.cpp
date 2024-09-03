@@ -31,7 +31,7 @@ public:
         cout<<c<<endl;
         k=k%c;
         // cout<<k<<endl;
-        if(k==0 || k==c) return head;
+        if(k==0) return head;
         int p=c-k;
         int i=0;
         temp=head;
@@ -42,7 +42,6 @@ public:
         }
         ListNode* secondhead=temp->next;
         temp->next=NULL;
-        ListNode* firsthead=head;
         ListNode* move=secondhead;
         while(move->next!=NULL){
             move=move->next;
