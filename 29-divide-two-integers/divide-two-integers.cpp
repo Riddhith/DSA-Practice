@@ -10,7 +10,7 @@ public:
         unsigned int d = abs(divisor);
         unsigned int ans = 0;
         while (n >= d) {
-            short count = 0;
+            int count = 0;
             while (n > (d << (count + 1)))
                 count++;
             ans += (1 << count);
