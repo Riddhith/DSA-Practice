@@ -9,7 +9,7 @@ public:
         //     ans=ans*x;
         // }
         if(m<0) m=-1*m;
-        while(m){
+        while(m>0){
             if(m%2==0){
                 m=m/2;
                 x=x*x;   
