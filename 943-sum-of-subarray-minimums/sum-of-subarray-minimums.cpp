@@ -26,10 +26,8 @@ public:
     }
     int sumSubarrayMins(vector<int>& arr) {
         int n=arr.size();
-        vector<int> nse(n);
-        vector<int> pse(n);
-        nse=findNse(arr,n);
-        pse=findPsee(arr,n);
+        vector<int> nse=findNse(arr,n);
+        vector<int> pse=findPsee(arr,n);
         for(int i=0;i<nse.size();i++){
             cout<<nse[i]<<" ";
         }
