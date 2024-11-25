@@ -28,13 +28,13 @@ public:
         int n=arr.size();
         vector<int> nse=findNse(arr,n);
         vector<int> pse=findPsee(arr,n);
-        for(int i=0;i<nse.size();i++){
-            cout<<nse[i]<<" ";
-        }
-        cout<<endl;
-        for(int i=0;i<pse.size();i++){
-            cout<<pse[i]<<" ";
-        }
+        // for(int i=0;i<nse.size();i++){
+        //     cout<<nse[i]<<" ";
+        // }
+        // cout<<endl;
+        // for(int i=0;i<pse.size();i++){
+        //     cout<<pse[i]<<" ";
+        // }
         long long total=0;
         int mod=(int)(1e9+7);
         for(int i=0;i<arr.size();i++){
