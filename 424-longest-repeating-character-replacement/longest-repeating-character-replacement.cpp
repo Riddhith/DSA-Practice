@@ -6,9 +6,7 @@ public:
         int hash[26] = {0};
         while(right<n){
             hash[s[right]-'A']++; // Character frequency
-            if(hash[s[right]-'A'] > maxFreq){
-                maxFreq = hash[s[right]-'A'];
-            };
+            maxFreq = max(maxFreq,hash[s[right]-'A']);
             if((right-left+1)-maxFreq > k){ //trimming the left portion
                 hash[s[left]-'A']--;
                 left++;
