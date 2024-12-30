@@ -6,9 +6,9 @@ public:
         int n=s.size();
         for(int i=0;i<n;i++){
             a[s[i]-'a']=i;
-            if(a[0]!=-1 && a[1]!=-1 && a[2]!=-1){
-                cnt=cnt+1+min({a[0],a[1],a[2]});
-            }
+            // if(a[0]!=-1 && a[1]!=-1 && a[2]!=-1){
+            cnt=cnt+1+min({a[0],a[1],a[2]});
+            // }
         }
         /*int c=0;
         int n=s.size();
