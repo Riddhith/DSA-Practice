@@ -10,10 +10,8 @@ public:
         while (l1<n1 && l2<n2) {
             if (s[l2]>=g[l1]) {
                 l1++;
-                l2++;
-            } else {
-                l2++;
             }
+            l2++;
         }
         return l1;
     }
