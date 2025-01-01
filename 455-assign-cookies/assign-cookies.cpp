@@ -8,7 +8,7 @@ public:
         int n2 = s.size();
         int l1 = 0,l2=0;
         while (l1<n1 && l2<n2) {
-            if (s[l2]>=g[l1]) {
+            if (g[l1]<=s[l2]) {
                 l1++;
             }
             l2++;
