@@ -2,6 +2,7 @@ class Solution {
 public:
     vector<int> minOperations(string boxes) {
         int n=boxes.size();
+        if(n==1)return {0} ; 
         vector<int> ans(n,0);
         for(int i=0;i<n;i++){
             int ad=0;
