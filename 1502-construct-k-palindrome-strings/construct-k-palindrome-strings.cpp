@@ -10,9 +10,7 @@ public:
         int odd=0;
         bool flag=true;
         for(auto it:mp){
-            if(it.second&1){
-                odd++;
-            }
+            odd+=it.second&1;
         }
         // cout<<flag<<endl;
         return odd<=k;
