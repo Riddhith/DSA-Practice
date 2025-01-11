@@ -15,7 +15,6 @@ public:
             }
         }
         // cout<<flag<<endl;
-        if(odd<=k) return true;
-        else return false;
+        return odd<=k;
     }
 };
