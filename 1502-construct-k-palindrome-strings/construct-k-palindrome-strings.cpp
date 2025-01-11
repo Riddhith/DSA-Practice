@@ -1,7 +1,7 @@
 class Solution {
 public:
     bool canConstruct(string s, int k) {
-        map<char,int> mp;
+        unordered_map<char,int> mp;
         int n=s.size();
         if(n<k) return false;
         for(auto ch:s){
